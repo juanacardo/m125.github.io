@@ -17,10 +17,9 @@
     <meta property="og:url" content="https://m125.moscow">
     <meta property="og:image" content="https://m125.moscow/img/share.jpg">
     <link rel="stylesheet" href="css/style.min.css" type="text/css">
-    <script src="js/main.min.js"></script>
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header" id="top">
       <div class="container">
         <div class="page-header__wrap">
           <div class="header-logo"><img class="header-logo__img" src="img/logo-white.svg" alt="Логотип М125" width="98" height="28">
@@ -28,12 +27,13 @@
           </div>
           <nav class="header-nav">
             <ul class="header-nav__list clear-list">
-              <li class="header-nav__item"><a class="header-nav__link" href="#about">Об М125</a></li>
-              <li class="header-nav__item"><a class="header-nav__link" href="#news">Лента новостей</a></li>
-              <li class="header-nav__item"><a class="header-nav__link" href="#findyourdistrict">Найди свой район</a></li>
-              <li class="header-nav__item"><a class="header-nav__link" href="#projects">Проекты</a></li>
-              <li class="header-nav__item"><a class="header-nav__link" href="#partnership">Партнерство</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="#about" data-scroll-to>Об М125</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="#news" data-scroll-to>Лента новостей</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="#findyourdistrict" data-scroll-to>Найди свой район</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="#projects" data-scroll-to>Проекты</a></li>
+              <li class="header-nav__item"><a class="header-nav__link" href="#partnership" data-scroll-to>Партнерство</a></li>
             </ul>
+            <button class="header-nav__toggle" type="button"><span class="visually-hidden">Открыть меню</span></button>
           </nav>
         </div>
       </div>
@@ -51,52 +51,62 @@
         </div>
       </section>
       <section class="info">
-        <h2 class="visually-hidden" id="about">Информация о сообществах</h2>
+        <h2 class="visually-hidden" id="about" data-scroll-target="#about">Информация о сообществах</h2>
         <div class="container">
           <div class="info__wrapper">
             <div class="info__sticky-block">
-              <svg width="438" height="128" viewBox="0 0 438 128" fill="#B60505" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M63.3019 61.4754L65.4593 68.3281H66.1781L68.3354 61.4754L105.918 1.9144e-05H131.637V128H103.761V59.8536L105.738 47.7751H105.019L100.345 59.6729L75.35 100.597H56.2873L31.2911 59.6729L26.613 47.7751H25.8942L27.8764 59.8536V128H-2.28882e-05V1.9144e-05H25.715L63.3019 61.4754Z" />
-                <path
-                  d="M163.259 51.2004L144.195 32.0896L176.206 1.9144e-05H198.146V103.662H214.508V128H153.907V103.662H170.269V46.5135L172.606 40.2038L172.067 39.8425L168.292 46.1522L163.259 51.2004Z" />
-                <path
-                  d="M289.842 55.3453L297.396 46.6932V33.3531L290.201 26.1402H257.652L234.813 33.3531L227.083 8.47253L254.236 1.9144e-05H302.429L325.267 23.0761V55.526L307.467 75.5381L260.707 101.859H325.267V128H229.06V89.4191L289.842 55.3453Z" />
-                <path
-                  d="M436.202 1.9144e-05V26.1402H372.362V47.2341H414.982L438 70.1296V105.105L414.982 128H368.406L341.43 118.986L349.703 94.1069L372.901 101.859H402.754L410.125 94.6479V80.5862L402.754 73.3763H344.49V1.9144e-05H436.202Z" />
-              </svg>
+              <div class="info__logo-section">
+                <svg class="info__logo-svg" width="438" height="128" viewBox="0 0 438 128" fill="#B60505" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M63.3019 61.4754L65.4593 68.3281H66.1781L68.3354 61.4754L105.918 1.9144e-05H131.637V128H103.761V59.8536L105.738 47.7751H105.019L100.345 59.6729L75.35 100.597H56.2873L31.2911 59.6729L26.613 47.7751H25.8942L27.8764 59.8536V128H-2.28882e-05V1.9144e-05H25.715L63.3019 61.4754Z"/>
+                  <path d="M163.259 51.2004L144.195 32.0896L176.206 1.9144e-05H198.146V103.662H214.508V128H153.907V103.662H170.269V46.5135L172.606 40.2038L172.067 39.8425L168.292 46.1522L163.259 51.2004Z"/>
+                  <path d="M289.842 55.3453L297.396 46.6932V33.3531L290.201 26.1402H257.652L234.813 33.3531L227.083 8.47253L254.236 1.9144e-05H302.429L325.267 23.0761V55.526L307.467 75.5381L260.707 101.859H325.267V128H229.06V89.4191L289.842 55.3453Z"/>
+                  <path d="M436.202 1.9144e-05V26.1402H372.362V47.2341H414.982L438 70.1296V105.105L414.982 128H368.406L341.43 118.986L349.703 94.1069L372.901 101.859H402.754L410.125 94.6479V80.5862L402.754 73.3763H344.49V1.9144e-05H436.202Z"/>
+                </svg>
+              </div>
             </div>
             <div class="info__scroll-block">
-              <div class="info__section" data-scroll data-scroll-repeat><span class="info__title">сеть</span><span class="info__text">районных сообществ <br>Накрывает весь город – все 125 районов</span></div>
-              <div class="info__section" data-scroll data-scroll-repeat><span class="info__title">2 млн</span><span class="info__text">подписчиков <br>Каждый восьмой москвич нашел свое сообщество и подписался</span></div>
-              <div class="info__section" data-scroll data-scroll-repeat><span class="info__title">52 млн</span><span class="info__text">просмотров <br>В социальных сетях ВКонтакте и Телеграм</span></div>
+              <div class="info__section info__section--red">
+                <div class="info__text-holder"><span class="info__title">сеть</span><span class="info__text">районных сообществ <br>Накрывает весь город – все 125 районов</span></div>
+              </div>
+              <div class="info__section info__section--blue">
+                <div class="info__text-holder"><span class="info__title">2 млн</span><span class="info__text">подписчиков <br>Каждый восьмой москвич нашел свое сообщество и подписался</span></div>
+              </div>
+              <div class="info__section info__section--yellow">
+                <div class="info__text-holder"><span class="info__title">52 млн</span><span class="info__text">просмотров <br>В социальных сетях ВКонтакте и Телеграм</span></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="tile">
-        <div class="tile__wrapper">
-          <div class="tile__line tile__line--1" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--2" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--3" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--4" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--5" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--6" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--7" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--8" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-          <div class="tile__line tile__line--9" data-scroll data-scroll-css-progress data-scroll-offset="10%, 0"></div>
-        </div>
-      </div>
-      <section class="news">
-        <h2 class="visually-hidden" id="news">Лента новостей из районных пабликов</h2>
-        <div class="news__text news__text--chto"></div>
-        <div class="news__text news__text--listai"></div>
-        <div class="container">
-          <div class="news__frame">
-            <iframe width="494" height="1000" src="https://infofeed.ru/external"></iframe>
+      <div class="page-main__bg-wrapper">
+        <div class="tile">
+          <div class="tile__wrapper">
+            <div class="tile__line tile__line--1"></div>
+            <div class="tile__line tile__line--2"></div>
+            <div class="tile__line tile__line--3"></div>
+            <div class="tile__line tile__line--4"></div>
+            <div class="tile__line tile__line--5"></div>
+            <div class="tile__line tile__line--6"></div>
+            <div class="tile__line tile__line--7"></div>
+            <div class="tile__line tile__line--8"></div>
+            <div class="tile__line tile__line--9"></div>
           </div>
         </div>
-      </section>
+        <section class="news">
+          <h2 class="visually-hidden" id="news" data-scroll-target="#news">Лента новостей из районных пабликов</h2>
+          <div class="news__scroll-container news__scroll-container--chto">
+            <div class="news__text"></div>
+          </div>
+          <div class="news__scroll-container news__scroll-container--listai">
+            <div class="news__text"></div>
+          </div>
+          <div class="container">
+            <div class="news__frame">
+              <iframe width="494" height="1000" src="https://infofeed.ru/external"></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
       <div class="animation">
         <div class="animation__back">
           <div class="animation__item animation__item--1">
@@ -127,7 +137,7 @@
       </div>
       <section class="catalog">
         <div class="container">
-          <h2 class="catalog__title" id="findyourdistrict">Найди свой район</h2>
+          <h2 class="catalog__title" id="findyourdistrict" data-scroll-target="#findyourdistrict">Найди свой район</h2>
           <div class="catalog__wrapper">
             <ul class="catalog__district-list clear-list">
               <li class="catalog__district-item catalog__district-item--active">ВСЕ</li>
@@ -1259,36 +1269,34 @@
       <div class="decoration"></div>
       <section class="projects">
         <div class="container">
-          <h2 class="projects__title" id="projects">Проекты, которые объединяют город</h2>
-          <div class="projects__wrap">
-            <div class="project">
-              <div class="project__logo"><img class="project__img" src="img/mosopros_avatar.png" alt="Логотип проекта Мосопрос" width="264" height="223"></div>
-              <div class="project__info">
-                <h3 class="visually-hidden">Проект Мосопрос</h3>
-                <p class="project__title">Каждую неделю</p>
-                <p class="project__text">Мы проводим опросы среди москвичей и задаем им небанальные вопросы.</p>
-                <p class="project__text">В опросах принимают участие более 10 тысяч голосов от участников сообществ сети М125.</p>
-              </div>
+          <h2 class="projects__title" id="projects" data-scroll-target="#projects">Проекты, которые объединяют город</h2>
+          <div class="project">
+            <div class="project__logo"><img class="project__img" src="img/mosopros_avatar.png" alt="Логотип проекта Мосопрос" width="264" height="223"></div>
+            <div class="project__info">
+              <h3 class="visually-hidden">Проект Мосопрос</h3>
+              <p class="project__title">Каждую неделю</p>
+              <p class="project__text">Мы проводим опросы среди москвичей и задаем им небанальные вопросы.</p>
+              <p class="project__text">В опросах принимают участие более 10 тысяч голосов от участников сообществ сети М125.</p>
             </div>
-            <div class="project">
-              <div class="project__logo"><img class="project__img" src="img/geroes_avatar.png" alt="Логотип проекта Герои Города" width="264" height="223"></div>
-              <div class="project__info">
-                <h3 class="visually-hidden">Проект Герои Города</h3>
-                <p class="project__title">Каждый месяц</p>
-                <p class="project__text">Подписчики выдвигают номинантов от каждого района Москвы и выбирают Героя города.</p>
-                <p class="project__text">Им может стать любой, кто сделал что-то важное: служит городу, добивается успехов, становится героем по собственной воле или по воле обстоятельств.</p>
-              </div>
+          </div>
+          <div class="project">
+            <div class="project__logo"><img class="project__img" src="img/geroes_avatar.png" alt="Логотип проекта Герои Города" width="264" height="223"></div>
+            <div class="project__info">
+              <h3 class="visually-hidden">Проект Герои Города</h3>
+              <p class="project__title">Каждый месяц</p>
+              <p class="project__text">Подписчики выдвигают номинантов от каждого района Москвы и выбирают Героя города.</p>
+              <p class="project__text">Им может стать любой, кто сделал что-то важное: служит городу, добивается успехов, становится героем по собственной воле или по воле обстоятельств.</p>
             </div>
-            <div class="project">
-              <div class="project__logo"><img class="project__img" src="img/city-top.png" alt="Логотип проекта Итоги города" width="264" height="223"></div>
-              <div class="project__info">
-                <h3 class="visually-hidden">Проект Итоги Города</h3>
-                <p class="project__title">Каждый год</p>
-                <p class="project__text">В конце года мы подводим итоги в полюбившимся всем формате голосования. Оно проходит в трех номинациях: люди, места, события.</p>
-                <p class="project__text">Самые яркие личности: в год количество героев достигает 700 человек.</p>
-                <p class="project__text">Новые точки притяжения или уголки города, которые покорили сердце москвичей.</p>
-                <p class="project__text">Важные районные и/или городские события, которые привлекли внимание горожан.</p>
-              </div>
+          </div>
+          <div class="project">
+            <div class="project__logo"><img class="project__img" src="img/city-top.png" alt="Логотип проекта Итоги города" width="264" height="223"></div>
+            <div class="project__info">
+              <h3 class="visually-hidden">Проект Итоги Города</h3>
+              <p class="project__title">Каждый год</p>
+              <p class="project__text">В конце года мы подводим итоги в полюбившимся всем формате голосования. Оно проходит в трех номинациях: люди, места, события.</p>
+              <p class="project__text">Самые яркие личности: в год количество героев достигает 700 человек.</p>
+              <p class="project__text">Новые точки притяжения или уголки города, которые покорили сердце москвичей.</p>
+              <p class="project__text">Важные районные и/или городские события, которые привлекли внимание горожан.</p>
             </div>
           </div>
         </div>
@@ -1296,7 +1304,7 @@
       <section class="partners">
         <div class="container">
           <div class="partners__wrap">
-            <h2 class="partners__title" id="partnership">Информационная поддержка</h2>
+            <h2 class="partners__title" id="partnership" data-scroll-target="#partnership">Информационная поддержка</h2>
             <p class="partners__text">Сеть М125 поддерживает московские проекты, места и события важные и интересные для горожан.</p>
             <div class="partners__button-block"><span>Для предложений <br>о сотрудничестве</span><a class="partners__button" href="mailto:collab@m125.moscow" target="_blank">Напишите нам</a></div>
           </div>
@@ -1343,6 +1351,7 @@
           </ul>
         </div>
       </section>
+      <button class="page-main__button" data-scroll data-scroll-to data-scroll-to-href="#top"></button>
     </main>
     <footer class="page-footer">
       <div class="container">
@@ -1363,5 +1372,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/main.min.js"></script>
   </body>
 </html>
