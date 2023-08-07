@@ -558,7 +558,7 @@ body {
 
 .tile__line {
   width: 150%;
-  padding-bottom: 8.356%;
+  height: 125px;
   background-repeat: repeat-x;
   background-size: contain;
   margin-bottom: -29px;
