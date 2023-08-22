@@ -10,7 +10,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="img/favicons/apple-icon-180x180.png">
-    <link rel="manifest" href="manifest.webmanifest">
+    <link src="/img/favicons/192.png" type="image/png" sizes="192x192">
+    <link src="/img/favicons/512.png" type="image/png" sizes="512x512">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Официальный сайт М125 Московская сеть районных сообществ">
     <meta property="og:description" content="М125 – московские районные комьюнити в социальных сетях ВКонтакте и Телеграм. Лента каждого паблика – микс официальных новостей мэрии и районных администраций с бытовыми вопросами, криминальными происшествиями, территориальными событиями, потеряшками">
@@ -43,7 +44,7 @@
         <h2 class="visually-hidden">Присоединяйтесь к М125 – московским районным комьюнити.</h2>
         <div class="container">
           <div class="promo__wrapper">
-            <video class="promo__video" muted loop autoplay playsinline preload="auto">
+            <video class="promo__video" muted loop autoplay playsinline preload="auto" role="presentation">
               <source src="img/video/m125_1080.webm" type="video/webm">
               <source src="img/video/m125_1080.mp4" type="video/mp4">
             </video>
@@ -57,7 +58,7 @@
           <div class="info__wrapper">
             <div class="info__sticky-block">
               <div class="info__logo-section">
-                <svg class="info__logo-svg" width="438" height="128" viewBox="0 0 438 128" fill="#B60505" xmlns="http://www.w3.org/2000/svg">
+                <svg class="info__logo-svg" width="438" height="128" role="img" viewBox="0 0 438 128" fill="#B60505" xmlns="http://www.w3.org/2000/svg">
                   <path d="M63.3019 61.4754L65.4593 68.3281H66.1781L68.3354 61.4754L105.918 1.9144e-05H131.637V128H103.761V59.8536L105.738 47.7751H105.019L100.345 59.6729L75.35 100.597H56.2873L31.2911 59.6729L26.613 47.7751H25.8942L27.8764 59.8536V128H-2.28882e-05V1.9144e-05H25.715L63.3019 61.4754Z"/>
                   <path d="M163.259 51.2004L144.195 32.0896L176.206 1.9144e-05H198.146V103.662H214.508V128H153.907V103.662H170.269V46.5135L172.606 40.2038L172.067 39.8425L168.292 46.1522L163.259 51.2004Z"/>
                   <path d="M289.842 55.3453L297.396 46.6932V33.3531L290.201 26.1402H257.652L234.813 33.3531L227.083 8.47253L254.236 1.9144e-05H302.429L325.267 23.0761V55.526L307.467 75.5381L260.707 101.859H325.267V128H229.06V89.4191L289.842 55.3453Z"/>
@@ -115,7 +116,7 @@
           </div>
           <div class="container">
             <div class="news__frame">
-              <iframe width="494" height="1000" src="https://infofeed.ru/external_short"></iframe>
+              <iframe width="494" height="1000" src="https://infofeed.ru/external_short" title="Лента новостей в социальных сетях"></iframe>
             </div>
           </div>
         </section>
@@ -226,7 +227,7 @@
               </div>
               <div class="catalog__search">
                 <input class="catalog__search-input" type="text" name="query" placeholder="Поиск">
-                <button class="catalog__search-button" type="button"></button>
+                <button class="catalog__search-button" type="button" aria-label="Запустить поиск по каталогу"></button>
               </div>
               <div class="catalog__sort">
                 <select class="catalog__select" name="sort">
@@ -1372,7 +1373,7 @@
           </ul>
         </div>
       </section>
-      <button class="page-main__button" data-scroll data-scroll-to data-scroll-to-href="#top"></button>
+      <button class="page-main__button" data-scroll data-scroll-to data-scroll-to-href="#top" aria-label="Прокрутить страницу вверх"></button>
     </main>
     <footer class="page-footer">
       <div class="container">
