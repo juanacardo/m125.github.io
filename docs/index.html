@@ -19,7 +19,7 @@
     <meta property="og:image" content="https://m125.moscow/img/share.jpg">
     <link rel="stylesheet" href="css/style.min.css" type="text/css">
   </head>
-  <body>
+  <body class="page">
     <header class="page-header" id="top">
       <div class="container">
         <div class="page-header__wrap">
@@ -44,7 +44,10 @@
         <h2 class="visually-hidden">Присоединяйтесь к М125 – московским районным комьюнити.</h2>
         <div class="container">
           <div class="promo__wrapper">
-            <iframe class="promo__video" width="560" height="315" src="https://www.youtube.com/embed/pxUpYHibdD0?controls=0&amp;loop=1&amp;autoplay=1&amp;disablekb=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <video class="promo__video" muted loop autoplay playsinline preload="auto" role="presentation" poster="img/video/poster.webp">
+              <source src="img/video/m125_1080.webm" type="video/webm">
+              <source src="img/video/m125_1080.mp4" type="video/mp4">
+            </video>
             <div class="promo__text"><span class="promo__item">местные новости</span><span class="promo__item">горячие дискуссии</span><span class="promo__item">включенные горожане</span></div>
           </div>
         </div>
@@ -114,7 +117,9 @@
           <div class="container">
             <div class="news__frame">
               <iframe width="494" height="1000" src="https://infofeed.ru/external_short" title="Лента новостей в социальных сетях"></iframe>
+              <button class="news__close-button" type="button" aria-label="Закрыть ленту новостей"></button>
             </div>
+            <button class="news__button" type="button">Читай ленту новостей</button>
           </div>
         </section>
       </div>
@@ -172,56 +177,8 @@
               <li class="catalog__district-item">ЗЕЛАО</li>
               <li class="catalog__district-item">ТИНАО</li>
             </ul>
-            <div class="catalog__filter">
-              <div class="catalog__options">
-                <div class="catalog__options-title">Округ</div>
-                <div class="catalog__options-list">
-                  <div class="catalog__option">
-                    <input id="vao" type="checkbox" name="vao">
-                    <label for="vao">ВАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="zao" type="checkbox" name="zao">
-                    <label for="zao">ЗАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="zelao" type="checkbox" name="zelao">
-                    <label for="zelao">ЗелАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="sao" type="checkbox" name="sao">
-                    <label for="sao">САО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="svao" type="checkbox" name="svao">
-                    <label for="svao">СВАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="szao" type="checkbox" name="szao">
-                    <label for="szao">СЗАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="tinao" type="checkbox" name="tinao">
-                    <label for="tinao">ТиНАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="tsao" type="checkbox" name="tsao">
-                    <label for="tsao">ЦАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="uao" type="checkbox" name="uao">
-                    <label for="uao">ЮАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="uvao" type="checkbox" name="uvao">
-                    <label for="uvao">ЮВАО</label>
-                  </div>
-                  <div class="catalog__option">
-                    <input id="uzao" type="checkbox" name="uzao">
-                    <label for="uzao">ЮЗАО</label>
-                  </div>
-                </div>
-              </div>
+            <form class="catalog__filter">
+              <div class="catalog__counter"><span>Найдено:</span><span class="catalog__number">15</span></div>
               <div class="catalog__search">
                 <input class="catalog__search-input" type="text" name="query" placeholder="Поиск">
                 <button class="catalog__search-button" type="button" aria-label="Запустить поиск по каталогу"></button>
@@ -239,8 +196,7 @@
                 <div class="catalog__tag">Ломоносовский район Москвы</div>
                 <button class="catalog__button-clear" type="button" name="clear">Очистить все</button>
               </div>
-              <div class="catalog__counter"><span>Найдено:</span><span class="catalog__number">15</span></div>
-            </div>
+            </form>
             <div class="catalog__no-result"><span>Ничего не найдено</span></div>
             <div class="catalog__result">
               <ul class="districts clear-list">
@@ -250,7 +206,7 @@
                     <p class="districts__name">Академический</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11180</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1930</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13110</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">323 310</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432617"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/academicheskiy"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432617" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/academicheskiy" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--alekseevskii">
@@ -259,7 +215,7 @@
                     <p class="districts__name">Алексеевский и Останкинский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">14210</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1937</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">16147</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">817 370</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76123050"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/aosvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76123050" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/aosvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--altufievo">
@@ -268,7 +224,7 @@
                     <p class="districts__name">Алтуфьевский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11655</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1582</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13237</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">244 960</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76350069"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/altufevskiy"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76350069" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/altufevskiy" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--arbat">
@@ -277,7 +233,7 @@
                     <p class="districts__name">Арбат</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5382</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1044</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6426</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">46 680</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76436019"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/arbatm"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76436019" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/arbatm" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--aeroport-sokol">
@@ -286,7 +242,7 @@
                     <p class="districts__name">Аэропорт и Сокол</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8632</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1024</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9656</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">241 900</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237138"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/aerosokol"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237138" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/aerosokol" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--babushkinskii">
@@ -295,7 +251,7 @@
                     <p class="districts__name">Бабушкинский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13758</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1011</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14769</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">595 820</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76349935"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/babushkins"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76349935" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/babushkins" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--basmannii">
@@ -304,7 +260,7 @@
                     <p class="districts__name">Басманный</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5841</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1131</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6972</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">151 055</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237524"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/basmanni"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237524" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/basmanni" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--begovoi-horoshevka">
@@ -313,7 +269,7 @@
                     <p class="districts__name">Беговой и Хорошевский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8085</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1190</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9275</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">162 200</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237222"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/beghor"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237222" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/beghor" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--beskudnikovskii">
@@ -322,7 +278,7 @@
                     <p class="districts__name">Бескудниковский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17813</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1197</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">19010</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">722 150</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75172202"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/beskudn"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75172202" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/beskudn" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--bibirevo">
@@ -331,7 +287,7 @@
                     <p class="districts__name">Бибирево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17266</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1599</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">18865</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">866 480</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76123004"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/bibirclub"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76123004" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/bibirclub" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--birulovo">
@@ -340,7 +296,7 @@
                     <p class="districts__name">Бирюлево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">21002</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1572</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">22574</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">804 790</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public43523450"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/biruli"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public43523450" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/biruli" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--bogorodskoe">
@@ -349,7 +305,7 @@
                     <p class="districts__name">Богородское</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13429</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1086</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14515</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">508 180</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664668"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/bogorodskoye"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664668" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/bogorodskoye" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--brateevo">
@@ -358,7 +314,7 @@
                     <p class="districts__name">Братеево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11622</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1735</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13357</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">367 500</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72587396"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/brateewo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72587396" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/brateewo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--butirskii">
@@ -367,7 +323,7 @@
                     <p class="districts__name">Бутырский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8439</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">2047</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10486</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">415 380</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club70395793"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/butyrk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club70395793" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/butyrk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--veshniaki">
@@ -376,7 +332,7 @@
                     <p class="districts__name">Вешняки</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13701</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1162</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14863</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">745 370</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74257083"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/veshny"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74257083" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/veshny" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vnukovo">
@@ -385,7 +341,7 @@
                     <p class="districts__name">Внуково</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8774</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">864</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9638</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">373 780</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75852455"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vnuko"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75852455" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vnuko" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--voikovskii">
@@ -394,7 +350,7 @@
                     <p class="districts__name">Войковский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9828</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1085</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10913</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">289 560</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75852455"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vnuko"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75852455" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vnuko" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vostochnoe-degunino">
@@ -403,7 +359,7 @@
                     <p class="districts__name">Восточное Дегунино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17816</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1123</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">18939</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">347 620</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75663904"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/deguvost"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75663904" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/deguvost" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vostochnoe-degunino">
@@ -412,7 +368,7 @@
                     <p class="districts__name">Восточное Измайлово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11799</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">792</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12591</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">285 065</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public23495736"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmvos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public23495736" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmvos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vostochnii">
@@ -421,7 +377,7 @@
                     <p class="districts__name">Восточный</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">14465</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1267</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">15732</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">486 450</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440669"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vostvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440669" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vostvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vihino">
@@ -430,7 +386,7 @@
                     <p class="districts__name">Выхино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12123</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1122</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13245</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">453 560</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74995889"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vyhinofm"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74995889" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vyhinofm" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--gagarinskii">
@@ -439,7 +395,7 @@
                     <p class="districts__name">Гагаринский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8588</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">980</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9568</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">194 240</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432577"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/gagarmos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432577" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/gagarmos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--golovinskii">
@@ -448,7 +404,7 @@
                     <p class="districts__name">Головинский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9637</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1051</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10688</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">371 965</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68497256"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/golovinsk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68497256" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/golovinsk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--golianovo">
@@ -457,7 +413,7 @@
                     <p class="districts__name">Гольяново</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">20541</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1099</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">21640</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">753 065</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public45322374"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/golanovo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public45322374" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/golanovo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--danilovskii-donskoi">
@@ -466,7 +422,7 @@
                     <p class="districts__name">Даниловский и Донской</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8502</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1715</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10217</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">232 680</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club114354"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/donsdan"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club114354" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/donsdan" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--dmitrovskii">
@@ -475,7 +431,7 @@
                     <p class="districts__name">Дмитровский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">20601</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">2848</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">23449</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 633 850</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public45450967"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/dmimos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public45450967" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/dmimos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--dorogomilovo">
@@ -484,7 +440,7 @@
                     <p class="districts__name">Дорогомилово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8422</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1036</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9458</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">259 330</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664903"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/dorogomilov"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664903" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/dorogomilov" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--zhulebino">
@@ -493,7 +449,7 @@
                     <p class="districts__name">Жулебино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13300</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">874</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14174</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">521 690</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public27223073"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vyhinozhulebino"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public27223073" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vyhinozhulebino" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--zamoskvoreche">
@@ -502,7 +458,7 @@
                     <p class="districts__name">Замоскворечье и Якиманка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8442</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1073</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9515</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">136 770</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75172316"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zmskya"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75172316" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zmskya" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--zapadnoe-degunio">
@@ -511,7 +467,7 @@
                     <p class="districts__name">Западное Дегунино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13196</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1351</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14547</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">790 750</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90133664"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/degunzap"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90133664" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/degunzap" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--zuzino">
@@ -520,7 +476,7 @@
                     <p class="districts__name">Зюзино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11786</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1170</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12956</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">585 270</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237302"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zyuzinomos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237302" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zyuzinomos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--ziablikovo">
@@ -529,7 +485,7 @@
                     <p class="districts__name">Зябликово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11706</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1607</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13313</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">504 940</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club69758171"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zyablici"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club69758171" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zyablici" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--ivanovskoe">
@@ -538,7 +494,7 @@
                     <p class="districts__name">Ивановское</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">16967</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1287</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">18254</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">584 680</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74256704"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ivanovsko"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74256704" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ivanovsko" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--izmailovo">
@@ -547,7 +503,7 @@
                     <p class="districts__name">Измайлово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13228</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1111</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14339</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">336 510</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club50843611"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmaylovoo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club50843611" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmaylovoo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kapotna">
@@ -556,7 +512,7 @@
                     <p class="districts__name">Капотня</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9183</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1716</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10899</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">317 640</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68441846"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kapotnyar"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68441846" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kapotnyar" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kievskii">
@@ -565,7 +521,7 @@
                     <p class="districts__name">Киевский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9779</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1013</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10792</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">336 150</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/moskiev"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskovskynm"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/moskiev" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskovskynm" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--konkovo">
@@ -574,7 +530,7 @@
                     <p class="districts__name">Коньково</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8497</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">985</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9482</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">249 830</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72420828"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/konkovob"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72420828" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/konkovob" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--koptevo">
@@ -583,7 +539,7 @@
                     <p class="districts__name">Коптево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">15203</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1150</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">16353</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">727 350</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club151368"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/koptevosao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club151368" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/koptevosao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kosino">
@@ -592,7 +548,7 @@
                     <p class="districts__name">Косино-Ухтомский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11953</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1095</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13048</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">285 685</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74091686"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kosinou"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74091686" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kosinou" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kotlovka">
@@ -601,7 +557,7 @@
                     <p class="districts__name">Котловка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8890</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">965</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9855</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">261 620</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/kotloveka"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kotlovk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/kotloveka" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kotlovk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--krasnoselskii">
@@ -610,7 +566,7 @@
                     <p class="districts__name">Красносельский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5430</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1065</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6495</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">89 790</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club73994693"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/krasnosels"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club73994693" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/krasnosels" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--krylatskoe">
@@ -619,7 +575,7 @@
                     <p class="districts__name">Крылатское</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13547</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">867</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14414</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">250 870</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public44088351"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/krylat"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public44088351" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/krylat" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--krukovo">
@@ -628,7 +584,7 @@
                     <p class="districts__name">Крюково</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13593</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">567</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14160</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">314 170</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/kryuq"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kryuq"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/kryuq" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kryuq" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kuzminki">
@@ -637,7 +593,7 @@
                     <p class="districts__name">Кузьминки</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11358</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1970</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13328</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">594 580</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935724"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kuzminc"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935724" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kuzminc" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kuntsevo">
@@ -646,7 +602,7 @@
                     <p class="districts__name">Кунцево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17940</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">2850</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">20790</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">814 260</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public40215828"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kynts"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public40215828" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kynts" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--kurkino">
@@ -655,7 +611,7 @@
                     <p class="districts__name">Куркино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7141</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1029</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8170</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">172 020</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439176"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/curkino"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439176" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/curkino" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--levoberezhnii">
@@ -664,7 +620,7 @@
                     <p class="districts__name">Левобережный</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9036</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1063</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10099</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">263 965</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432617"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/levoberez"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public72432617" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/levoberez" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--lefortovo">
@@ -673,7 +629,7 @@
                     <p class="districts__name">Лефортово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13367</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1702</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">15069</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">499 570</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71385713"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lephort"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71385713" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lephort" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--lianozovo">
@@ -682,7 +638,7 @@
                     <p class="districts__name">Лианозово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8655</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1815</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10470</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">249 940</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club72400690"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lianoz"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club72400690" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lianoz" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--lomonosovskii">
@@ -691,7 +647,7 @@
                     <p class="districts__name">Ломоносовский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5849</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1050</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6899</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">142 390</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club72408021"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lomonosovsk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club72408021" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lomonosovsk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--losinka">
@@ -700,7 +656,7 @@
                     <p class="districts__name">Лосиноостровский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13549</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">773</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14322</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">842 020</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68424689"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/losink"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68424689" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/losink" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--lublino">
@@ -709,7 +665,7 @@
                     <p class="districts__name">Люблино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">16492</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1845</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">18337</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">529 070</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935776"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lubli"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935776" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/lubli" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--marfino">
@@ -718,7 +674,7 @@
                     <p class="districts__name">Марфино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10258</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1708</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">11966</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">180 700</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club69102960"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/marfyno"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club69102960" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/marfyno" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--mariina-rosha">
@@ -727,7 +683,7 @@
                     <p class="districts__name">Марьина Роща</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8410</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1736</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10146</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">360 600</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public70395773"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/maryinar"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public70395773" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/maryinar" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--mariino">
@@ -736,7 +692,7 @@
                     <p class="districts__name">Марьино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">22623</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1708</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">24331</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 628 230</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75237407"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/marinobest"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75237407" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/marinobest" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--zelenograd">
@@ -745,7 +701,7 @@
                     <p class="districts__name">Матушкино, Савелки, Старое Крюково и Силино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10361</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">733</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">11094</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">351 430</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75237407"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zelold"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club75237407" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/zelold" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--medvedkovo">
@@ -754,7 +710,7 @@
                     <p class="districts__name">Медведково</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">16441</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">515</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">16956</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">536 260</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public71819773"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/medvedkovosvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public71819773" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/medvedkovosvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--metrogorodok">
@@ -763,7 +719,7 @@
                     <p class="districts__name">Метрогородок</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11019</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1082</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12101</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">582 160</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440523"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/metrog"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440523" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/metrog" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--meshanskii">
@@ -772,7 +728,7 @@
                     <p class="districts__name">Мещанский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5727</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1045</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6772</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">102 835</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68425462"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/meschanka"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68425462" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/meschanka" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--mitino">
@@ -781,7 +737,7 @@
                     <p class="districts__name">Митино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11447</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1213</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12660</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">515 240</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public731100707"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/mitinobest"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public731100707" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/mitinobest" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--mozhaika">
@@ -790,7 +746,7 @@
                     <p class="districts__name">Можайский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">14844</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1710</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">16554</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 008 480</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76122972"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/mozaisky"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76122972" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/mozaisky" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--molzhaninovo">
@@ -799,7 +755,7 @@
                     <p class="districts__name">Молжаниновский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9637</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1079</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10716</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">380 520</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68481341"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/molzhan"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68481341" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/molzhan" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--moskvoreche-saburovo">
@@ -808,7 +764,7 @@
                     <p class="districts__name">Москворечье-Сабурово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7435</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1752</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9187</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">381 150</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public33409592"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskvorech"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public33409592" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskvorech" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--moskovskii">
@@ -817,7 +773,7 @@
                     <p class="districts__name">Московский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12543</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1551</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14094</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">271 970</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/mosmsk"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskovskynm"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/mosmsk" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/moskovskynm" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--mosrentgen-kommunarka">
@@ -826,7 +782,7 @@
                     <p class="districts__name">Мосрентген и Коммунарка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8767</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">969</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9736</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">134 570</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/komren"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kommunark"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/komren" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/kommunark" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--nagatino-kolomenskoe">
@@ -835,7 +791,7 @@
                     <p class="districts__name">Нагатинский затон и Нагатино-Садовники</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">19410</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1856</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">21266</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 399 580</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club79396029"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nagatyno"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club79396029" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nagatyno" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--nagornii">
@@ -844,7 +800,7 @@
                     <p class="districts__name">Нагорный</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9429</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1842</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">11271</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">471 380</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club70758075"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nagornyr"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club70758075" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nagornyr" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--nekrasovka">
@@ -853,7 +809,7 @@
                     <p class="districts__name">Некрасовка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">20227</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1586</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">21813</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">829 540</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public89955661"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nekrasovc"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public89955661" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nekrasovc" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--nizhegorodskii">
@@ -862,7 +818,7 @@
                     <p class="districts__name">Нижегородский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5728</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1044</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6772</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">192 470</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90102735"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nizhegorod"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90102735" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/nizhegorod" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--novo-peredelkino">
@@ -871,7 +827,7 @@
                     <p class="districts__name">Ново-Переделкино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11513</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">902</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12415</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">292 630</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68739955"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/novoper"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68739955" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/novoper" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--novokosino">
@@ -880,7 +836,7 @@
                     <p class="districts__name">Новокосино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">15955</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1195</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">17150</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">546 530</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68442213"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/novokosi"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68442213" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/novokosi" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--obruchevskii">
@@ -889,7 +845,7 @@
                     <p class="districts__name">Обручевский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7863</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1051</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8914</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">371 965</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68438117"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/obruc"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68438117" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/obruc" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--orehovo-borisovo">
@@ -898,7 +854,7 @@
                     <p class="districts__name">Орехово-Борисово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">25362</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">927</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">26289</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 272 510</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440698"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/orebo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68440698" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/orebo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--otradnoe">
@@ -907,7 +863,7 @@
                     <p class="districts__name">Отрадное</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10000</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">848</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10848</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">410 380</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club929653"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/otradnoesvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club929653" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/otradnoesvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--ochakovo-matveevskoe">
@@ -916,7 +872,7 @@
                     <p class="districts__name">Очаково-Матвеевское</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">14932</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1079</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">16011</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">537 210</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71041795"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/o4akovo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71041795" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/o4akovo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--perovo-novogireevo">
@@ -925,7 +881,7 @@
                     <p class="districts__name">Перово и Новогиреево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">18985</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1237</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">20222</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">892 040</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73410859"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/peronovo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73410859" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/peronovo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--pechatniki">
@@ -934,7 +890,7 @@
                     <p class="districts__name">Печатники</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13547</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">2034</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">15581</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 075 970</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public37187505"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/pe4atni"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public37187505" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/pe4atni" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--pokrovskoe-streshnevo">
@@ -943,7 +899,7 @@
                     <p class="districts__name">Покровское-Стрешнево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5856</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1082</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6938</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">213 590</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club73993392"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/pokrovsko"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club73993392" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/pokrovsko" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--preobrazhenka">
@@ -952,7 +908,7 @@
                     <p class="districts__name">Преображенское</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9915</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1073</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10988</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">10 988</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664578"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/preobrazhe"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664578" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/preobrazhe" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--presna">
@@ -961,7 +917,7 @@
                     <p class="districts__name">Пресненский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9130</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">975</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10105</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">358 440</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237578"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/presnens"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237578" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/presnens" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--vernadka">
@@ -970,7 +926,7 @@
                     <p class="districts__name">Проспект Вернадского</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7904</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">938</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8842</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">270 700</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664863"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vernadk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664863" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/vernadk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--ramenki">
@@ -979,7 +935,7 @@
                     <p class="districts__name">Раменки</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9941</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">881</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10822</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">275 320</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935463"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ramenkyzao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935463" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ramenkyzao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--rostokino">
@@ -988,7 +944,7 @@
                     <p class="districts__name">Ростокино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11771</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1882</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13653</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">554 410</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68481311"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/rsvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68481311" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/rsvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--riazanka">
@@ -997,7 +953,7 @@
                     <p class="districts__name">Рязанский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">13280</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1768</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">15048</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">714 390</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68444025"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ryazansciy"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68444025" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ryazansciy" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--savelovskii">
@@ -1006,7 +962,7 @@
                     <p class="districts__name">Савеловский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7541</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1452</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8993</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">279 030</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74257861"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/savelovs"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74257861" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/savelovs" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--sviblovo">
@@ -1015,7 +971,7 @@
                     <p class="districts__name">Свиблово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8107</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1681</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9788</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">337 460</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public2326970"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/swiblovo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public2326970" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/swiblovo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--butovo">
@@ -1024,7 +980,7 @@
                     <p class="districts__name">Северное Бутово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12097</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1070</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13167</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">329 190</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237455"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/butovobest"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237455" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/butovobest" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--severnoe-izmailovo">
@@ -1033,7 +989,7 @@
                     <p class="districts__name">Северное Измайлово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12151</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">861</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13012</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">306 555</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public1405710"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmsev"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public1405710" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/izmsev" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--severnii">
@@ -1042,7 +998,7 @@
                     <p class="districts__name">Северный</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12667</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">2020</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14687</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">454 810</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public89955908"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ssvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public89955908" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ssvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--sokolinaya-gora">
@@ -1051,7 +1007,7 @@
                     <p class="districts__name">Соколиная Гора</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12037</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">836</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12873</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">346 750</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74091305"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/sokolink"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74091305" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/sokolink" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--sokolniki">
@@ -1060,7 +1016,7 @@
                     <p class="districts__name">Сокольники</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10641</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1589</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12230</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">354 060</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935843"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/sokolnici"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75935843" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/sokolnici" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--solntsevo">
@@ -1069,7 +1025,7 @@
                     <p class="districts__name">Солнцево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17399</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1262</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">18661</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">560 840</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68739857"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/solntsevozao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68739857" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/solntsevozao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--strogino">
@@ -1078,7 +1034,7 @@
                     <p class="districts__name">Строгино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">21884</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1958</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">23842</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 546 420</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/stroginomos"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/strogin"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/stroginomos" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/strogin" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--taganka">
@@ -1087,7 +1043,7 @@
                     <p class="districts__name">Таганка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9581</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">998</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10579</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">430 700</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237375"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tagankamos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75237375" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tagankamos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--tverskoi">
@@ -1096,7 +1052,7 @@
                     <p class="districts__name">Тверской</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">5353</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1070</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">6423</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">71 180</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74950854"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tverskoymos"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74950854" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tverskoymos" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--textilshiki">
@@ -1105,7 +1061,7 @@
                     <p class="districts__name">Текстильщики</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9922</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1778</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">11700</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">444 300</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71464455"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/textilsh"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club71464455" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/textilsh" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--teplii-stan">
@@ -1114,7 +1070,7 @@
                     <p class="districts__name">Теплый Стан</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9922</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">908</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10830</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">359 180</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411306"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/teplaq"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411306" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/teplaq" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--timiriazevskii">
@@ -1123,7 +1079,7 @@
                     <p class="districts__name">Тимирязевский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12240</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1239</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">13479</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">323 310</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76437053"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/timiryazevs"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public76437053" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/timiryazevs" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--troitsk">
@@ -1131,8 +1087,8 @@
                   <div class="districts__info-block">
                     <p class="districts__name">Троицк</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">17534</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1564</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">19098</span></span></p>
-                    <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">982 510</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/troytsk"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/troytsk"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count"></span></p>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/troytsk" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/troytsk" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--troparevo-nikulino">
@@ -1141,7 +1097,7 @@
                     <p class="districts__name">Тропарево-Никулино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9291</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1015</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10306</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">277 060</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439893"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tropare"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439893" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tropare" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--tushino">
@@ -1150,7 +1106,7 @@
                     <p class="districts__name">Тушино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">19529</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1335</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">20864</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">795 160</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/tushyno"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tushyno1"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/tushyno" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tushyno1" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--filevskii-park">
@@ -1159,7 +1115,7 @@
                     <p class="districts__name">Филевский парк</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9229</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">984</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10213</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">263 000</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74998389"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/filevskyp"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public74998389" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/filevskyp" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--fili">
@@ -1168,7 +1124,7 @@
                     <p class="districts__name">Фили-Давыдково</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11891</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">920</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12811</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">315 260</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664828"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/filidav"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public75664828" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/filidav" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--hamovniki">
@@ -1177,7 +1133,7 @@
                     <p class="districts__name">Хамовники</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7592</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1077</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8669</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">154 890</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73110664"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hamovn"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73110664" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hamovn" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--hovrino">
@@ -1186,7 +1142,7 @@
                     <p class="districts__name">Ховрино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10655</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1712</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12367</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">285 725</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public44153302"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hovryno"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public44153302" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hovryno" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--horoshevo-mnevniki">
@@ -1195,7 +1151,7 @@
                     <p class="districts__name">Хорошево-Мневники</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11636</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1140</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12776</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">514 710</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/hormne"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hormne"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/hormne" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/hormne" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--tsaritsino">
@@ -1204,7 +1160,7 @@
                     <p class="districts__name">Царицыно</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8151</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1503</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9654</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">350 200</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439997"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tsaritsy"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68439997" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/tsaritsy" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--chertanovo">
@@ -1213,7 +1169,7 @@
                     <p class="districts__name">Чертаново</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">25926</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1042</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">26968</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">1 107 620</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public58739972"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/chertanovou"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public58739972" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/chertanovou" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--cheremushki">
@@ -1222,7 +1178,7 @@
                     <p class="districts__name">Черемушки</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">9847</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">970</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">10817</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">357 660</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411156"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/cheremus"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411156" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/cheremus" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--sherbinka">
@@ -1231,7 +1187,7 @@
                     <p class="districts__name">Щербинка</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">11276</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1009</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">12285</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">278 480</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90329578"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/scherbink"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90329578" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/scherbink" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--shukino">
@@ -1240,7 +1196,7 @@
                     <p class="districts__name">Щукино</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">7755</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">995</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">8750</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">230 310</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/schyk"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/scherbink"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/schyk" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/scherbink" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--butovo-uzhnoe">
@@ -1249,7 +1205,7 @@
                     <p class="districts__name">Южное Бутово</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">15027</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">862</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">15889</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">273 590</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68478186"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ubutovo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68478186" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ubutovo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--uzhnoportovii">
@@ -1258,7 +1214,7 @@
                     <p class="districts__name">Южнопортовый</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">8187</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1754</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">9941</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">205 130</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90102949"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/uportovy"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public90102949" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/uportovy" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--yaroslavka">
@@ -1267,7 +1223,7 @@
                     <p class="districts__name">Ярославский</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">12883</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1879</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">14762</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">830 120</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68424848"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ssvao"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/club68424848" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/ssvao" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
                 <li class="districts__item districts__item--yasenevo">
@@ -1276,7 +1232,7 @@
                     <p class="districts__name">Ясенево</p>
                     <p class="districts__subscribers-info"><span class="districts__subscribers-title">Подписчики:</span><span class="districts__vk-info"><span class="districts__vk-title">ВК</span><span class="districts__vk-count">10670</span></span><span class="districts__tg-info"><span class="districts__tg-title">ТГ</span><span class="districts__tg-count">1074</span></span><span class="districts__all-info"><span class="districts__all-title">Всего</span><span class="districts__all-count">11744</span></span></p>
                     <p class="districts__views-info"><span class="districts__views-title">Просмотров в месяц:</span><span class="districts__views-count">566 770</span></p>
-                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411051"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/yacenevo"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
+                    <div class="districts__buttons"><span>Подписаться:</span><a class="districts__button districts__button--vk" href="https://vk.com/public73411051" target="_blank"><span class="visually-hidden">Подписаться Вконтакте</span></a><a class="districts__button districts__button--tg" href="https://t.me/yacenevo" target="_blank"><span class="visually-hidden">Подписаться в Телеграм</span></a></div>
                   </div>
                 </li>
               </ul>
