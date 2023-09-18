@@ -1,9 +1,9 @@
 
-import LocomotiveScroll from 'locomotive-scroll';
-import {gsap} from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger.js';
+// import LocomotiveScroll from 'locomotive-scroll';
+// import {gsap} from 'gsap';
+// import ScrollTrigger from 'gsap/ScrollTrigger.js';
 
-const locomotiveScroll = new LocomotiveScroll();
+// const locomotiveScroll = new LocomotiveScroll();
 
 let navMain = document.querySelector('.header-nav');
 let navToggle = document.querySelector('.header-nav__toggle');
