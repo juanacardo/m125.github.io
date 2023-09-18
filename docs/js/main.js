@@ -34,100 +34,100 @@ newsCloseButton.addEventListener('click', function () {
   page.classList.remove('page--fixed');
 });
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.matchMedia({
-  '(min-width: 900px)': function () {
+// ScrollTrigger.matchMedia({
+//   '(min-width: 900px)': function () {
 
-    ScrollTrigger.create({
-      trigger: '.info__section--red',
-      start: 'top 20%',
-      end: 'bottom 20%',
-      toggleClass: {targets: '.info__logo-svg', className: 'red'},
-    });
+//     ScrollTrigger.create({
+//       trigger: '.info__section--red',
+//       start: 'top 20%',
+//       end: 'bottom 20%',
+//       toggleClass: {targets: '.info__logo-svg', className: 'red'},
+//     });
 
-    ScrollTrigger.create({
-      trigger: '.info__section--blue',
-      start: 'top 20%',
-      end: 'bottom 20%',
-      toggleClass: {targets: '.info__logo-svg', className: 'blue'},
-    });
+//     ScrollTrigger.create({
+//       trigger: '.info__section--blue',
+//       start: 'top 20%',
+//       end: 'bottom 20%',
+//       toggleClass: {targets: '.info__logo-svg', className: 'blue'},
+//     });
 
-    ScrollTrigger.create({
-      trigger: '.info__section--yellow',
-      start: 'top 20%',
-      end: 'bottom 20%',
-      toggleClass: {targets: '.info__logo-svg', className: 'yellow'},
-    });
+//     ScrollTrigger.create({
+//       trigger: '.info__section--yellow',
+//       start: 'top 20%',
+//       end: 'bottom 20%',
+//       toggleClass: {targets: '.info__logo-svg', className: 'yellow'},
+//     });
 
-    const textBlocks = gsap.utils.toArray('.info__text-holder');
-    textBlocks.forEach((text) => {
-      gsap.from(text, {
-        scrollTrigger: {
-          start: 'top bottom',
-          end: 'bottom 20%',
-          trigger: text,
-          toggleClass: 'visible',
-        },
-      });
-    });
-  },
-});
+//     const textBlocks = gsap.utils.toArray('.info__text-holder');
+//     textBlocks.forEach((text) => {
+//       gsap.from(text, {
+//         scrollTrigger: {
+//           start: 'top bottom',
+//           end: 'bottom 20%',
+//           trigger: text,
+//           toggleClass: 'visible',
+//         },
+//       });
+//     });
+//   },
+// });
 
-ScrollTrigger.create({
-  trigger: '.page-main',
-  start: '10% 100%',
-  end: '103% 100%',
-  toggleClass: {targets: '.page-main__button', className: 'visible'},
-});
-
-
-const tiles = gsap.utils.toArray('.tile__line');
-tiles.forEach((tile) => {
-  gsap.from(tile, {
-    scrollTrigger: {
-      trigger: tile,
-      start: 'top bottom',
-      end: 'bottom bottom',
-      scrub: true,
-    },
-    opacity: 0,
-  });
-});
+// ScrollTrigger.create({
+//   trigger: '.page-main',
+//   start: '10% 100%',
+//   end: '103% 100%',
+//   toggleClass: {targets: '.page-main__button', className: 'visible'},
+// });
 
 
-const textLines = gsap.utils.toArray('.news__text');
-textLines.forEach((line) => {
-  gsap.to(line, {
-    scrollTrigger: {
-      trigger: line,
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: true,
-    },
-    x: -200,
-  });
-});
+// const tiles = gsap.utils.toArray('.tile__line');
+// tiles.forEach((tile) => {
+//   gsap.from(tile, {
+//     scrollTrigger: {
+//       trigger: tile,
+//       start: 'top bottom',
+//       end: 'bottom bottom',
+//       scrub: true,
+//     },
+//     opacity: 0,
+//   });
+// });
 
-ScrollTrigger.matchMedia({
-  '(min-width: 900px)': function () {
-    const projects = gsap.utils.toArray('.project:not(:last-child)');
-    projects.forEach((project) => {
-      ScrollTrigger.create({
-        trigger: project,
-        start: 'top 800',
-        end: 'bottom 500',
-        toggleClass: 'visible',
-      });
-    });
 
-    ScrollTrigger.create({
-      trigger: '.projects__title',
-      start: 'top 108',
-      endTrigger: '.project:last-child .project__info',
-      end: 'top 250',
-      pin: true,
-      pinSpacing: false,
-    });
-  },
-});
+// const textLines = gsap.utils.toArray('.news__text');
+// textLines.forEach((line) => {
+//   gsap.to(line, {
+//     scrollTrigger: {
+//       trigger: line,
+//       start: 'top bottom',
+//       end: 'bottom top',
+//       scrub: true,
+//     },
+//     x: -200,
+//   });
+// });
+
+// ScrollTrigger.matchMedia({
+//   '(min-width: 900px)': function () {
+//     const projects = gsap.utils.toArray('.project:not(:last-child)');
+//     projects.forEach((project) => {
+//       ScrollTrigger.create({
+//         trigger: project,
+//         start: 'top 800',
+//         end: 'bottom 500',
+//         toggleClass: 'visible',
+//       });
+//     });
+
+//     ScrollTrigger.create({
+//       trigger: '.projects__title',
+//       start: 'top 108',
+//       endTrigger: '.project:last-child .project__info',
+//       end: 'top 250',
+//       pin: true,
+//       pinSpacing: false,
+//     });
+//   },
+// });
